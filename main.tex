@@ -26,19 +26,21 @@ Relevant DocDB entries
 
 \section{Introduction}
 \label{sec:intro}
-The first physics result of PROSPECT will show the reconstructed prompt energy spectrum and perform model independent spectral comparison between baselines for oscillation analysis, as well as the data-model comparison of reconstructed prompt spectrum.
+The first physics result of PROSPECT will show the reconstructed prompt energy spectrum of IBD events, perform model independent spectral comparison between baselines for oscillation analysis, and the data vs. model comparison of reconstructed prompt spectrum.
 
-The reconstructed energy of particle events in detector is naturally different from the energy deposit by the particles. It is vital to characterize the detector response with correct  nonlinearity of energy response and energy resolution for
+The reconstructed energy of particle events in detector is naturally different from the energy deposit by the particles because of detector response. 
+It is vital to characterize the detector response with correct  nonlinearity of energy response and energy resolution to
 \begin{itemize}
-    \item Supplying accurate detector response through MC with correct key values.
-    \item Quantifyign the systematic in energy response. 
-    \item Tweaking the data calibration constants.
+    \item Supply accurate detector response model through MC with correct key values.
+    \item Quantify the systematic uncertainty in energy response. 
+    \item Tweak the data calibration constants.
 \end{itemize}
 
 In this study, we utilized the gamma source calibration and ambient calibration to understand the absolute detector response, including nonlinearty induced by the Birk's law quenching and Cherenkov radiation of scintillator, the energy resolution that is contributed by the detector geometry and photon statistics, and absolute energy scale caused by calibration pressumption of n-capture electron equivalent energy.
+%TODO add neutron capture and alpha energy response when they are available.
 
 \section{Calibrations}
-
+In early calibration runs, the sources $^{137}$Cs, $^{22}$Na and $^{60}$Co were available to us, see table \ref{tab:src_table}.
 \begin{table}
     \centering
     \begin{tabular}{c|c|c}
@@ -50,8 +52,6 @@ In this study, we utilized the gamma source calibration and ambient calibration 
     \caption{Calibration source utilized}
     \label{tab:src_table}
 \end{table}
-
-In early calibration runs, the sources $^{137}$Cs, $^{22}$Na and $^{60}$Co were available to us, see table \ref{tab:src_table}.
 
 The each source was deployed near the center of detector for 10 minutes. To read the calbiration data, PROSPECT2x is used to reconstruct the gamma energy of cluster events in the full detector and compton scattering energy deposited into single segments. Before the calibration runs, a half-hour long reactor off background is collected for background subtraction. The gamma calibration spectra is shown in Figure \ref{fig:gammacalib}.
 
