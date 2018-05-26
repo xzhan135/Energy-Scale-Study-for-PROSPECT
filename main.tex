@@ -40,7 +40,8 @@ In this study, we utilized the gamma source calibration and ambient calibration 
 %TODO add neutron capture and alpha energy response when they are available.
 
 \section{Calibrations}
-In early calibration runs, the sources $^{137}$Cs, $^{22}$Na and $^{60}$Co were available to us, see table \ref{tab:src_table}.
+In early calibration runs, the sources $^{137}$Cs, $^{22}$Na and $^{60}$Co were available to us.
+Table \ref{tab:src_table} shows the decay and particle energy of the sources..
 \begin{table}
     \centering
     \begin{tabular}{c|c|c}
@@ -53,7 +54,11 @@ In early calibration runs, the sources $^{137}$Cs, $^{22}$Na and $^{60}$Co were 
     \label{tab:src_table}
 \end{table}
 
-The each source was deployed near the center of detector for 10 minutes. To read the calbiration data, PROSPECT2x is used to reconstruct the gamma energy of cluster events in the full detector and compton scattering energy deposited into single segments. Before the calibration runs, a half-hour long reactor off background is collected for background subtraction. The gamma calibration spectra is shown in Figure \ref{fig:gammacalib}.
+Each source was inserted through calibration tube by time belt and deployed close to the center of detector.
+Once in position, the each energy scale calibration run last for 10 minutes.
+To read the calbiration data, PROSPECT2x analysis package \cite{P2X} is used to reconstruct the gamma energy of clusters in the full detector and compton scattering energy deposited into single segments. 
+Before the calibration runs, a half-hour long reactor off background data is collected for background subtraction. 
+The gamma calibration spectra is shown in Figure \ref{fig:gammacalib}.
 
 \begin{figure}[h!]
 \centering
@@ -64,7 +69,14 @@ The each source was deployed near the center of detector for 10 minutes. To read
 \label{fig:gammacalib}
 \end{figure}
 
-The $^{12}$B is an ambient electron source in PROSPECT detector that is induced by cosmogenic neutron with $^{12}$C(n, p)$^{12}$B interaction. The cross section of this interaction is $\sim 0.01$ barn. To acquire $^{12}$B events in PROSPECT, we collected recoil coincident ionization events by allowing the single-cell-hit recoil events in 0.7 to 10 MeVee range followed by less than 3-cell-hit electron candidates with energy less than 20 MeV. In the procedure above, we used PSD to separate recoil and ionization events. The life time is 29 ms, shown in Figure \ref{fig:lifetime}. The prompt-delay distance is fitted with guassian, with stardard deviation = 2.99 cm, shown in Figure \ref{fig:distance}. In 25.4 days of reactor off ambient data collection, we collected about 11656 events of $^{12}$B decay. The spectrum of $^{12}$B electron is shown in \ref{fig:B12}.
+The $^{12}$B is an ambient electron source in PROSPECT detector that is induced by cosmogenic neutron with $^{12}$C(n, p)$^{12}$B interaction.
+The cross section of this interaction is $\sim 0.01$ barn. 
+It is a valued calibration source to demonstrate the correct scale of reconstructed energy of IBD events.
+To acquire $^{12}$B events in PROSPECT, we collected recoil coincident ionization events by allowing the single-cell-hit recoil events in 0.7 to 10 MeVee range that followed by less than 3-cell-hit electron candidates with energy less than 20 MeV. 
+In the procedure above, we used PSD to separate recoil and ionization events. The life time is 29.0 ms, shown in Figure \ref{fig:lifetime}. 
+The prompt to delay distance is fitted with guassian distribution, the best fit  stardard deviation = 2.99 cm, shown in Figure \ref{fig:distance}. 
+During the 25.4 days of reactor off period, we collected about 11656 events of $^{12}$B decay. 
+The reconstructed spectrum of $^{12}$B electron is shown in \ref{fig:B12}.
 \begin{figure}[h!]
 \centering
 \subfigure[The delay-prompt time difference of $^{12}$B candidates ]{\label{fig:lifetime}\includegraphics[width=60mm]{figures/lifetime.pdf}}\quad
