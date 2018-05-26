@@ -145,10 +145,19 @@ By excluding electronic noise, this threshold also affect the energy scale nonli
 To ensure MC being precisely compared to data, ZLE threshold was simulated in PROSPECT2x's CalcDetectorPulseResponse program.
 
 \section{$\chi^2$ Test}
-The MC calibration spectrum was compared with data by $\chi^2$ test. We generated the list of calibration MC with specific values of $k_B$ and $k_C$. The tweaked MC spectra were then scaled with the absolute energy scale and smeared with the resolution as the function of energy. The energy range of PROSPECT The energy range for $^{12}$B spectrum is 3 to 13.5 MeV. Finally, the summed $\chi^2$ value for all calibration sources was minimized by MINUIT to search for best-fit parameters. Now we assume $a$ and $c = 0$. 
+The MC calibration spectrum was compared with data by $\chi^2$ test. 
+We generated a list of calibration MC with specific values of $k_B$ and $k_C$. 
+The tweaked MC spectra were then scaled with a constant energy scale and smeared with the resolution as the function of energy.
+To exclude the influence of ZLE threshold to reconstructed energy, we first compared the Compton scattering energy of gamma collected by single segment. 
+The range of data vs. MC fitting for gamma calibration source were selected from 0.2 MeV to the edge of energy distribution. 
+The range for $^{12}$B spectrum is 3 to 13.5 MeV. 
+At last, the summed $\chi^2$ value for all calibration sources listed above was minimized by MINUIT to search for best-fit parameters. 
+Based on our knowledge to the detector, the $a$ and $c$ are currently assumed to be zero. 
 
-To simplify the simulation, the amount of MC events was irrelevant to the event rates of calibration data. However, the MC was normalized to match the integral of data event rate in the energy range of interest. 
+To simplify the simulation, the amount of MC events was irrelevant to the event rates of calibration data. 
+However, the MC was normalized to match the integral of data event rate in the energy range of interest. 
 
+%TODO change the values to the real best fit. 
 The lowest $\chi^2/NDF = 207.11/499$ with the parameters: $k_B = 0.107 \pm 0.001$ mm/MeV , $k_C = 89 \pm 1\%$, $\beta_{rec} = 101.2 \pm 0.1\%$ and $b = 5.49\%$. The result of the fit can be shown in Figure \ref{fig:goodfit} and \ref{fig:chi2}.
 
 \begin{figure}[h!]
