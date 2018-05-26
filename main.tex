@@ -87,14 +87,17 @@ The reconstructed spectrum of $^{12}$B electron is shown in \ref{fig:B12}.
 \end{figure}
 
 
-\section{MC-data Comparisons}
-The purpose of the comparison between Monte-Carlo and calibration data is to characterize the detector energy response. The final goal of this study is to provide trust worthy model IBD prompt energy spectrum with precisely tweaked detector response. The detector response includes the absolute energy scale contributed by the nonlinearity of liquid scintillator (LS), the relative energy scale affected by detector geometry and resolution of reconstructed energy mainly influenced by the photon statistics of scintillator. In this study, we focus on the absolute energy scale and energy resolution. Thus, the Birk’s constant for electron in detector $k_B$, the detect efficiency of Cherenkov light $k_{C}$, the absolute energy scale and the energy resolution as function of energy are the terms we need to search precisely.
+\section{Monte-Carlo vs. Data Comparisons}
+The purpose of the comparison between Monte-Carlo and calibration data is to characterize the detector energy response, so we are able to provide trust worthy IBD prompt energy spectrum model with precisely tweaked detector response. 
+The detector response includes the energy scale contributed by the nonlinearity of liquid scintillator (LS), the relative energy scale affected by detector geometry and resolution of reconstructed energy mainly influenced by the photon statistics of scintillator. 
+Thus, the Birk’s constant in detector $k_B$, the detect efficiency of Cherenkov light $k_{C}$, the absolute energy scale and the energy dependent resolution are the terms we needed to search precisely.
 
-We used the PROSPECT-G4 simulation package to generate all the calibration source with the same configuration as calibration data. In MC, the nonlinearity from Birk’s quenching effect of scintillator and Cherenkov radiation from induced by electron was simulated. While the energy resolution caused by photon statistics and potential absolute energy scale should be applied on the spectrum of MC. 
+The PROSPECT-G4 simulation package \cite{PG4} was utilized to generate all of the calibration sources with the same configuration as calibration data. 
+The nonlinearity from Birk’s quenching effect of scintillator and Cherenkov radiation from induced by electron was simulated by PROSPECT_G4. 
+The energy resolution caused by photon statistics and potential absolute energy scale were applied on the MC generated energy spectrum. 
 
 \subsection{Nonlinearity}
 The energy response of LS is mainly affected by the Birk’s law quenching and Cherenkov radiation. 
-
 The Birk’s law is a empirical function of the light yield per track length:
 \begin{equation}
     \frac{dL}{dx} = \frac{\frac{dE}{dx}}{1+k_B\frac{dE}{dx}},
