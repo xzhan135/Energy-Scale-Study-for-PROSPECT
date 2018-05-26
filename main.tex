@@ -93,29 +93,40 @@ The detector response includes the energy scale contributed by the nonlinearity 
 Thus, the Birk’s constant in detector $k_B$, the detect efficiency of Cherenkov light $k_{C}$, the absolute energy scale and the energy dependent resolution are the terms we needed to search precisely.
 
 The PROSPECT-G4 simulation package \cite{PG4} was utilized to generate all of the calibration sources with the same configuration as calibration data. 
-The nonlinearity from Birk’s quenching effect of scintillator and Cherenkov radiation from induced by electron was simulated by PROSPECT_G4. 
+The nonlinearity from Birk’s quenching effect of scintillator and Cherenkov radiation from induced by electron was simulated by PROSPECT-G4. 
 The energy resolution caused by photon statistics and potential absolute energy scale were applied on the MC generated energy spectrum. 
 
 \subsection{Nonlinearity}
 The energy response of LS is mainly affected by the Birk’s law quenching and Cherenkov radiation. 
+
 The Birk’s law is a empirical function of the light yield per track length:
 \begin{equation}
     \frac{dL}{dx} = \frac{\frac{dE}{dx}}{1+k_B\frac{dE}{dx}},
 \end{equation}
-where $k_B$ is the Birk's constant which is a property of LS and differs upon different particle type. It represents the reconstructed energy with quenching in LS, the nonlinear energy loss caused by particle-mulicule interaction. In MC, we  simulate the quenching effect by multiplying energy difference in G4steps with a Birk's factor:
+where $k_B$ is the Birk's constant which is a property of LS. 
+It represents the quenched reconstructed energy in LS, a nonlinear energy loss caused by particle-molecule interaction. 
+In MC, we  simulate the quenching effect by multiplying energy difference in between particle scatters with a Birk's factor:
 \begin{equation}
    \frac{1}{1+k_B\frac{dE}{dx}}.
    \label{eql:birks}
 \end{equation}
 
-The Cherenkov radiation is the light emitted as a charged particle travelling faster than the phase velocity of light in a medium and polarizes the molecules. The electromagnetic  field of depolarization then add up as coherent light. The number of photon generated through the particle track is expressed as:
+%TODO add image indicating how Birk's constants affect the reconstruct energy.
+
+The Cherenkov radiation is the light emitted as a charged particle traveling faster than the phase velocity of light in a medium. 
+The molecules in the medium are polarized along the particle track, when the particle is faster than light, the electromagnetic field of molecule depolarization can add up as coherent light emission. 
+The number of photon generated along the particle track can be expressed as:
 \begin{equation}
     \frac{d^2N}{dxd\lambda} = \frac{2\pi\alpha z^2}{\lambda}\left(1- \frac{1}{\beta^2n^2(\lambda)}\right),
 \end{equation}
-where $N$ is number of photon, $\alpha$ is a fine structure constant, $z$ is the particle charge, $\beta$ is the speed of the particle and $n(\lambda)$ is index of refraction.
-In MC, we collected the energy emitted from the Cherenkov radiation as the summed energy of detected Cherenkov photons. We also assumed the LS's index of refraction remains same in 200-700 nm range of light. The particle energy loss in Cherenkov radiation is neglegible.
+where $N$ is number of photon, $\alpha$ is a fine structure constant, $z$ is the particle's electric charge, $\beta$ is the speed of the particle and $n(\lambda)$ is index of refraction.
+In MC processing, we collected the energy emitted from the Cherenkov radiation as the summed energy of detected Cherenkov photons. 
+We also assumed the LS's index of refraction remains same against wavelengths in 200-700 nm range.
+The particle energy loss in Cherenkov radiation is negligible.
 
 To simply model the detector energy scale, we adjusted the Birk's constant $k_B$ in equation \ref{eql:birks} and the detect efficiency of Cherenkov light $k_C$ to search the best-fit value with data.
+
+%TODO add image to indicate how cherenkov affect the reconstructed energy.
 
 \subsection{Energy Resolution}
 The reconstructed resolution is a function of energy:
@@ -125,9 +136,13 @@ The reconstructed resolution is a function of energy:
 where $a$ is affected by the detector geometry, $b$ is from the photon statistics (PE/MeV) and $c$ for the quantum efficiency of PMTs.
 
 \subsection{Other Energy Scale Factors}
-The reconstructed energy is based on the assumption that $n$ captured by $^6$Li yield 0.55 MeVee in detector. The deviation of true electron equivalent value to this assumption can induce an constant energy scale throughout the all energy. This absolute energy scale, as a fitting parameter, was searched together with other energy response parameters.
+The reconstructed energy scale was initially based on the assumption that $n$ captured by $^6$Li yield 0.55 MeVee in detector. 
+The deviation of true electron equivalent energy to this estimation can induce a constant energy scale throughout the all energy. 
+This absolute energy scale, as a fitting parameter, was searched together with other energy response parameters.
 
-The zero length encoding (ZLE) threshold was applied during data acquisition, requiring each ADC channel to record signals that are only above specific magnitude. By excluding electronic noise, this threshold also affect the energy scale nonlinearly by excluding small deposition of energy in some segments in multi-hit events. To ensure MC being precisely compared to data, ZLE threshold was simulated in P2x CalcDetectorPulseResponse.
+The zero length encoding (ZLE) threshold was applied during data acquisition, requiring each ADC channel to record signals that are only above specific magnitude. 
+By excluding electronic noise, this threshold also affect the energy scale nonlinearly by excluding small deposition of energy in some segments in multi-hit events. 
+To ensure MC being precisely compared to data, ZLE threshold was simulated in PROSPECT2x's CalcDetectorPulseResponse program.
 
 \section{$\chi^2$ Test}
 The MC calibration spectrum was compared with data by $\chi^2$ test. We generated the list of calibration MC with specific values of $k_B$ and $k_C$. The tweaked MC spectra were then scaled with the absolute energy scale and smeared with the resolution as the function of energy. The energy range of PROSPECT The energy range for $^{12}$B spectrum is 3 to 13.5 MeV. Finally, the summed $\chi^2$ value for all calibration sources was minimized by MINUIT to search for best-fit parameters. Now we assume $a$ and $c = 0$. 
